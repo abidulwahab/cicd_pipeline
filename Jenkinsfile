@@ -2,7 +2,6 @@ pipeline {
     agent any 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('abiddockerhub')
-        PATH+DOCKER = "/usr/local/bin"  // Use Jenkins' recommended syntax to add to PATH
     }
     stages { 
 
