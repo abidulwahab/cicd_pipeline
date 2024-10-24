@@ -24,9 +24,9 @@ pipeline {
     }
     post {
         always {
-            // Wrap this in a node block to ensure the correct context
-            node {
-                sh 'docker logout'
+            script {
+                // Ensure logout runs within a safe context
+                sh 'docker logout || true'
             }
         }
     }
