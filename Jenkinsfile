@@ -24,7 +24,10 @@ pipeline {
     }
     post {
         always {
-            sh 'docker logout'
+            // Wrap this in a node block to ensure the correct context
+            node {
+                sh 'docker logout'
+            }
         }
     }
 }
